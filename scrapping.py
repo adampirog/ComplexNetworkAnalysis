@@ -105,3 +105,15 @@ def to_graph(df):
             result.append(new_row)
 
     return pd.DataFrame(result)
+
+
+def to_graph_alternative(df):
+    result = []
+    for index, row in tqdm(df.iterrows(), total=len(df)):
+        for index2, row2 in df.iterrows():
+            if index != index2:
+                intersect = list(set(row.authors) & set(row2.authors))
+                if intersect:
+                    result.append([row.title, row2.title])
+
+    return pd.DataFrame(result, columns=['source', 'target'])
