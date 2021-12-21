@@ -1,0 +1,3 @@
+[submodule "Highly-Connected-Subgraphs-Clustering-HCS"]
+	path = clustering
+	url = https://github.com/53RT/Highly-Connected-Subgraphs-Clustering-HCS
